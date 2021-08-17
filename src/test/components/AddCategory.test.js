@@ -37,9 +37,10 @@ describe("Test <AddCategory/>", () => {
     // simulate form submit event
     wrapper.find("form").simulate("submit", { preventDefault() {} });
 
-    // setCategories called
+    // setCategories called, times, and called with function as param
     expect(setCategories).toHaveBeenCalled();
     expect(setCategories).toHaveBeenCalledTimes(1);
+    expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
 
     // input value is empty
     expect(wrapper.find("input").prop("value")).toBe("");
