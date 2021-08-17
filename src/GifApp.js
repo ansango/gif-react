@@ -1,13 +1,17 @@
 import { useState } from "react";
 import AddCategory from "./components/AddCategory";
+import { Container, ContainerTitle } from "./components/Container";
 import GifGrid from "./components/GifGrif";
+import GifTitle from "./components/GigTitle";
 
 const GifApp = () => {
   const [categories, setCategories] = useState(["Simpson"]);
 
   return (
-    <>
-      <h2>Gif App React</h2>
+    <Container>
+      <ContainerTitle>
+        <GifTitle title={"GIPHY React App"} />
+      </ContainerTitle>
       <AddCategory setCategories={setCategories} />
       <hr />
 
@@ -16,7 +20,7 @@ const GifApp = () => {
           <GifGrid key={category} category={category} />
         ))}
       </ol>
-    </>
+    </Container>
   );
 };
 

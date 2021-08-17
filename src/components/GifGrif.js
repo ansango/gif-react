@@ -1,4 +1,5 @@
 import useFetchGifs from "../hooks/useFetchGifs";
+import { ContainerGrid, ContainerTitle } from "./Container";
 import GifGridItem from "./GifGridItem";
 import Loader, { CardLoader, TitleLoader } from "./Loader";
 
@@ -9,24 +10,24 @@ const GifGrid = ({ category }) => {
     <>
       {loading && (
         <>
-          <div className="max-w-md mx-auto py-5">
+          <ContainerTitle>
             <Loader Component={TitleLoader} />
-          </div>
-          <div className="grid grid-cols-1 gap-2 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto py-5">
+          </ContainerTitle>
+          <ContainerGrid>
             <Loader amount={12} Component={CardLoader} />
-          </div>
+          </ContainerGrid>
         </>
       )}
       {!loading && (
         <>
-          <div className="max-w-md mx-auto py-5 text-center">
-            <h3 className="font-bold text-2xl py-5">{category}</h3>
-          </div>
-          <ul className="grid grid-cols-1 gap-2 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto py-5">
+          <ContainerTitle>
+            <h2 className="font-bold text-2xl py-5">{category}</h2>
+          </ContainerTitle>
+          <ContainerGrid>
             {images.map((img) => (
               <GifGridItem key={img.id} {...img} />
             ))}
-          </ul>
+          </ContainerGrid>
         </>
       )}
     </>
