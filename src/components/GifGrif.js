@@ -23,14 +23,14 @@ const GifGrid = ({ category }) => {
   }, []);
 
   return (
-    <div>
+    <>
       <h3>{category}</h3>
-      <ul>
+      <ul className="grid grid-cols-1 gap-2 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">
         {images.map((img) => (
           <GifGridItem key={img.id} {...img} />
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 export default GifGrid;
