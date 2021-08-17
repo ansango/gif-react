@@ -1,8 +1,9 @@
 import { useState } from "react";
 import AddCategory from "./components/AddCategory";
+import GifGrid from "./components/GifGrif";
 
 const GifApp = () => {
-  const [categories, setCategories] = useState(["One", "Two", "Three"]);
+  const [categories, setCategories] = useState(["One"]);
 
   return (
     <>
@@ -11,8 +12,8 @@ const GifApp = () => {
       <hr />
 
       <ol>
-        {categories.map((category, index) => (
-          <li key={index}>{category}</li>
+        {categories.map((category) => (
+          <GifGrid key={category} category={category} />
         ))}
       </ol>
     </>
