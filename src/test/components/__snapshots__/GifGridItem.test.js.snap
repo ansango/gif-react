@@ -5,10 +5,14 @@ exports[`Test <GifGridItem/> should render component 1`] = `
   className="border-2 border-gray-100 rounded-lg flex flex-col justify-between"
 >
   <img
+    alt="Titulo"
     className="object-fill h-48 w-full rounded-t-lg"
+    src="http://"
   />
   <p
     className="p-5"
-  />
+  >
+    Titulo
+  </p>
 </li>
 `;

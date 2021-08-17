@@ -1,9 +1,8 @@
-const GifGridItem = ({ url, title, id }) => {
+import PropTypes from "prop-types";
+
+const GifGridItem = ({ url, title }) => {
   return (
-    <li
-      className="border-2 border-gray-100 rounded-lg flex flex-col justify-between"
-      id={id}
-    >
+    <li className="border-2 border-gray-100 rounded-lg flex flex-col justify-between">
       <img
         src={url}
         alt={title}
@@ -14,4 +13,10 @@ const GifGridItem = ({ url, title, id }) => {
     </li>
   );
 };
+
+GifGridItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
 export default GifGridItem;
