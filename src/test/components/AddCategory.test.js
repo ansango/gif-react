@@ -15,8 +15,8 @@ describe("Test <AddCategory/>", () => {
   });
 
   test("should change text box", () => {
-    const input = wrapper.find("input");
     const value = "Hola Mundo";
+    const input = wrapper.find("input");
 
     input.simulate("change", { target: { value } });
   });
@@ -26,5 +26,22 @@ describe("Test <AddCategory/>", () => {
       preventDefault() {},
     });
     expect(setCategories).not.toHaveBeenCalled();
+  });
+
+  test("should call setCategories and clean text box", () => {
+    const value = "Hola Mundo";
+
+    // simulate input change event
+    wrapper.find("input").simulate("change", { target: { value } });
+
+    // simulate form submit event
+    wrapper.find("form").simulate("submit", { preventDefault() {} });
+
+    // setCategories called
+    expect(setCategories).toHaveBeenCalled();
+    expect(setCategories).toHaveBeenCalledTimes(1);
+
+    // input value is empty
+    expect(wrapper.find("input").prop("value")).toBe("");
   });
 });
