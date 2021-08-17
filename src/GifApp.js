@@ -1,11 +1,11 @@
 import { useState } from "react";
 import AddCategory from "./components/AddCategory";
 import { Container, ContainerTitle } from "./components/Container";
-import GifGrid from "./components/GifGrif";
+import GifGrid from "./components/GifGrid";
 import GifTitle from "./components/GigTitle";
 
 const GifApp = () => {
-  const [categories, setCategories] = useState(["Simpson"]);
+  const [categories, setCategories] = useState([]);
 
   return (
     <Container>
@@ -14,12 +14,16 @@ const GifApp = () => {
       </ContainerTitle>
       <AddCategory setCategories={setCategories} />
       <hr />
-
-      <ol>
-        {categories.map((category) => (
-          <GifGrid key={category} category={category} />
-        ))}
-      </ol>
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
+      {categories.length === 0 && (
+        <ContainerTitle>
+          <h2 className="font-bold text-2xl py-5">
+            Enter a value to start a new search
+          </h2>
+        </ContainerTitle>
+      )}
     </Container>
   );
 };

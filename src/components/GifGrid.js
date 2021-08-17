@@ -18,7 +18,7 @@ const GifGrid = ({ category }) => {
           </ContainerGrid>
         </>
       )}
-      {!loading && (
+      {!loading && images.length > 0 && (
         <>
           <ContainerTitle>
             <h2 className="font-bold text-2xl py-5">{category}</h2>
@@ -29,6 +29,11 @@ const GifGrid = ({ category }) => {
             ))}
           </ContainerGrid>
         </>
+      )}
+      {!loading && images.length === 0 && (
+        <ContainerTitle>
+          <h2 className="font-bold text-2xl py-5">{category} not found</h2>
+        </ContainerTitle>
       )}
     </>
   );
