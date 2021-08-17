@@ -6,10 +6,8 @@ const GifGridItem = ({ url, title }) => {
       <img
         src={url}
         alt={title}
-        className="object-fill h-48 w-full rounded-t-lg"
+        className="object-fill h-48 w-full rounded-lg"
       />
-
-      <p className="p-5">{title}</p>
     </li>
   );
 };
