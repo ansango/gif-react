@@ -1,25 +1,11 @@
 import { useEffect, useState } from "react";
+import { getGifs } from "../helpers/getGifs";
 import GifGridItem from "./GifGridItem";
-
-const getGifs = async () => {
-  const url =
-    "https://api.giphy.com/v1/gifs/search?q=Rick+and+Morty&limit=10&api_key=n3ZTO5rAaSPYT4HFQWMywRXJho7z27WU";
-  const resp = await fetch(url);
-  const { data } = await resp.json();
-  const gifs = data.map((img) => {
-    return {
-      id: img.id,
-      title: img.title,
-      url: img.images?.downsized_medium.url,
-    };
-  });
-  return gifs;
-};
 
 const GifGrid = ({ category }) => {
   const [images, setImages] = useState([]);
   useEffect(() => {
-    getGifs().then((imgs) => setImages(imgs));
+    getGifs(category).then((imgs) => setImages(imgs));
   }, []);
 
   return (

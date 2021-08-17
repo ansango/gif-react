@@ -7,7 +7,7 @@ const AddCategory = ({ setCategories }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputValue.trim().length > 0) {
-      setCategories((cats) => [...cats, inputValue]);
+      setCategories((cats) => [inputValue, ...cats]);
       setInputValue("");
     }
   };
