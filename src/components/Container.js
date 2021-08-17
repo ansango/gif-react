@@ -1,5 +1,5 @@
 export const Container = ({ children }) => (
-  <div className="max-w-6xl mx-auto">{children}</div>
+  <div className="max-w-6xl mx-auto px-5 py-10">{children}</div>
 );
 
 export const ContainerTitle = ({ children }) => (
