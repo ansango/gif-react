@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <GifApp/> should render 1`] = `
+<Container>
+  <ContainerTitle>
+    <GifTitle
+      title="GIPHY React App"
+    />
+  </ContainerTitle>
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <hr />
+  <ContainerTitle>
+    <h2
+      className="font-bold text-2xl py-5"
+    >
+      Enter a value to start a new search
+    </h2>
+  </ContainerTitle>
+</Container>
+`;
+
+exports[`Test <GifApp/> should render a categories list 1`] = `
+<Container>
+  <ContainerTitle>
+    <GifTitle
+      title="GIPHY React App"
+    />
+  </ContainerTitle>
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <hr />
+  <GifGrid
+    category="One Punch"
+    key="One Punch"
+  />
+  <GifGrid
+    category="Dragon Ball"
+    key="Dragon Ball"
+  />
+</Container>
+`;

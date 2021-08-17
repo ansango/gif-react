@@ -4,8 +4,8 @@ import { Container, ContainerTitle } from "./components/Container";
 import GifGrid from "./components/GifGrid";
 import GifTitle from "./components/GigTitle";
 
-const GifApp = () => {
-  const [categories, setCategories] = useState([]);
+const GifApp = ({ defaultCategories = []}) => {
+  const [categories, setCategories] = useState(defaultCategories);
 
   return (
     <Container>
